@@ -1,0 +1,13 @@
+Package: miscr
+Title: Collection of Miscellaneous Functions
+Version: 0.0.0.9000
+Authors@R: person("Richard", "White", email = "richard.white@sanger.ac.uk", role = c("aut", "cre"))
+Description: This is a collection of various functions that I find useful that
+  don't obviously fit anywhere else.
+Depends: R (>= 3.3.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Suggests:
+  topGO
+  graph
