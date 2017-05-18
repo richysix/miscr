@@ -1,4 +1,4 @@
-# misc-r
+# miscr
 
 An R package of miscellaneous functions
 
