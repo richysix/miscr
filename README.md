@@ -6,7 +6,7 @@ An R package of miscellaneous functions
 
 ```R
 library('devtools')
-install_github('richysix/misc-r')
+install_github('richysix/miscr')
 ```
 
 ## Prerequisites
