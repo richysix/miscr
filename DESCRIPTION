@@ -8,6 +8,6 @@ Depends: R (>= 3.3.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Suggests:
-  topGO
+Imports:
+  topGO,
   graph
