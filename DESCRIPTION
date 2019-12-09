@@ -11,3 +11,5 @@ LazyData: true
 Imports:
   topGO,
   graph
+Suggests: 
+    testthat (>= 2.1.0)
