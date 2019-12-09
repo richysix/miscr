@@ -12,7 +12,7 @@ output_plot(plot_entry, ...)
 \item{...}{Arguments passed on to the graphics device}
 }
 \value{
-the new plot list
+the results of \code{dev.off()} invisibly
 }
 \description{
 \code{output_plot} take a plot_entry object and saves the plot using
