@@ -68,7 +68,7 @@ open_graphics_device <- function(filename = 'plot.pdf', ...) {
 #' @param plot_entry list containing filename and plot
 #' @param ... Arguments passed on to the graphics device
 #'
-#' @return the new plot list
+#' @return the results of \code{dev.off()} invisibly
 #'
 #' @examples
 #' output_plot(plot_entry)
