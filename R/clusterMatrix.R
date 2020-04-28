@@ -1,14 +1,17 @@
 #' hierarchical clustering
 #'
 #' \code{cluster} hierarchically clusters the supplied matrix by column and
-#' returns the reordered matrix
+#' returns the reordered matrix and optionally the clustering object
 #'
-#' @param mat Matrix of counts to cluster
-#' @param scale logical indicating whether to center and scale the data
-#' @param dist_method character method for ceating the distance matrix
-#' @param ... other arguments passed to hclust
+#' @param mat          Matrix of counts to cluster
+#' @param scale        logical indicating whether to center and scale the data
+#' @param dist_method  character method for ceating the distance matrix
+#' @param clustering    logical indicating whether to return the hclust
+#' @param ...          Other arguments passed to hclust
 #'
-#' @return matrix with columns reordered based on clustering
+#' @return If clustering=FALSE, \code{cluster} returns the matrix
+#' with columns reordered based on clustering. If clustering=TRUE,
+#' then a list is returned with names matrix and clustering.
 #'
 #' @examples
 #' set.seed(1452)
@@ -16,7 +19,8 @@
 #'
 #' @export
 #'
-cluster <- function(mat, scale = TRUE, dist_method = "pearson", ...){
+cluster <- function(mat, scale = TRUE, dist_method = "pearson",
+                    clustering = FALSE, ...){
   # centre and scale numbers
   if (scale) {
     scaled_matrix <- scale(mat)
@@ -33,9 +37,19 @@ cluster <- function(mat, scale = TRUE, dist_method = "pearson", ...){
     distance_matrix <- dist(t(scaled_matrix))
   }
   # cluster and reorder correlation matrix
-  clustering <- stats::hclust(distance_matrix, ...)
+  hclust_obj <- stats::hclust(distance_matrix, ...)
+  reordered_matrix <- mat[ , hclust_obj$order]
 
-  return( mat[ , clustering$order] )
+  if (clustering) {
+    return(
+      list(
+        "matrix" = reordered_matrix,
+        "clustering" = hclust_obj
+      )
+    )
+  } else {
+    return(reordered_matrix)
+  }
 }
 
 #' hierarchical cluster matrix by rows or columns (or both)

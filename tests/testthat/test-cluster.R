@@ -24,6 +24,9 @@ test_that("cluster", {
                euclidean_clustered_columns)
   expect_equal(colnames(cluster(test_matrix, method = "ward.D2")),
                pearson_clustered_columns_ward_d2)
+  expect_type(cluster(test_matrix), "integer")
+  expect_type(cluster(test_matrix, clustering = TRUE), "list")
+  expect_equal(names(cluster(test_matrix, clustering = TRUE)), c("matrix", "clustering") )
 })
 
 test_that("cluster_matrix", {
