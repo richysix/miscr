@@ -2,6 +2,8 @@
 #'
 #' \code{extract_subtrees} extracts unconnected subtrees given a graph and a list of nodes
 #'
+#' This function requires the \code{\link[topGO]} and \code{\link[graph]} packages to be installed.
+#'
 #' @param graph a graphNEL object
 #' @param nodes a character vector of node labels to produce subtrees for
 #'
