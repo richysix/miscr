@@ -46,14 +46,13 @@ add_to_plot_list <- function(plot_list, plot, filename = NULL) {
 #' @export
 open_graphics_device <- function(filename = 'plot.pdf', ...) {
   if (sub("^.*\\.", "", filename) == "eps") {
-    postscript(file = filename, ...)
+    grDevices::postscript(file = filename, ...)
   } else if (sub("^.*\\.", "", filename) == "svg") {
-    library('svglite')
-    svglite(file = filename, ...)
+    svglite::svglite(file = filename, ...)
   } else if (sub("^.*\\.", "", filename) == "png") {
-    png(filename = filename, ...)
+    grDevices::png(filename = filename, ...)
   } else {
-    pdf(file = filename, ...)
+    grDevices::pdf(file = filename, ...)
   }
   invisible(TRUE)
 }
