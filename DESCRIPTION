@@ -11,7 +11,7 @@ LazyData: true
 Imports:
     svglite
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
     topGO,
     graph
 RoxygenNote: 7.0.2
