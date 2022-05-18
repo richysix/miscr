@@ -17,6 +17,9 @@ TRUE invisibly
 \description{
 \code{open_graphics_device} takes a file name and opens a graphics
 device based on the file suffix. Defaults to pdf if no match is found.
+If the file suffix is .svg then \code{open_graphics_device} tries to
+use the \link[=https://www.tidyverse.org/blog/2021/02/svglite-2-0-0/]{svglite}
+package. If svglite is not installed, it uses the builtin \code{\link[grDevices]{svg}}
 }
 \examples{
 open_graphics_device(filename = 'plot.eps')
