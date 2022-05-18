@@ -55,7 +55,7 @@ open_graphics_device <- function(filename = 'plot.pdf', ...) {
     if (length(find.package('svglite', quiet = TRUE)) == 0) {
       svglite::svglite(file = filename, ...)
     } else {
-      grDevices::svg(file = filename, ...)
+      grDevices::svg(filename = filename, ...)
     }
   } else if (sub("^.*\\.", "", filename) == "png") {
     grDevices::png(filename = filename, ...)

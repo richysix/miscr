@@ -1,6 +1,6 @@
 Package: miscr
 Title: Collection of Miscellaneous Functions
-Version: 0.0.0.9003
+Version: 0.0.0.9004
 Authors@R: person("Richard", "White", email = "richard.white@sanger.ac.uk", role = c("aut", "cre"))
 Description: This is a collection of various functions that I find useful that
   don't obviously fit anywhere else.
