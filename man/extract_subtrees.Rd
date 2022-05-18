@@ -17,6 +17,9 @@ a list of graphNEL objects
 \description{
 \code{extract_subtrees} extracts unconnected subtrees given a graph and a list of nodes
 }
+\details{
+This function requires the \code{\link[topGO]} and \code{\link[graph]} packages to be installed.
+}
 \examples{
 listOfSubTrees <- extract_subtrees(graph, nodes)
 
