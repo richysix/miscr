@@ -33,7 +33,7 @@ add_to_plot_list <- function(plot_list, plot, filename = NULL) {
 #' \code{open_graphics_device} takes a file name and opens a graphics
 #' device based on the file suffix. Defaults to pdf if no match is found.
 #' If the file suffix is .svg then \code{open_graphics_device} tries to
-#' use the \link[=https://www.tidyverse.org/blog/2021/02/svglite-2-0-0/]{svglite}
+#' use the \href{https://www.tidyverse.org/blog/2021/02/svglite-2-0-0/}{svglite}
 #' package. If svglite is not installed, it uses the builtin \code{\link[grDevices]{svg}}
 #'
 #' @param filename character, the filename to use
@@ -53,9 +53,9 @@ open_graphics_device <- function(filename = 'plot.pdf', ...) {
   } else if (sub("^.*\\.", "", filename) == "svg") {
     # if svglite is not installed use svg function
     if (length(find.package('svglite', quiet = TRUE)) == 0) {
-      svglite::svglite(file = filename, ...)
-    } else {
       grDevices::svg(filename = filename, ...)
+    } else {
+      svglite::svglite(file = filename, ...)
     }
   } else if (sub("^.*\\.", "", filename) == "png") {
     grDevices::png(filename = filename, ...)
